@@ -1,0 +1,14 @@
+#!/bin/sh
+
+c_c() {
+    echo
+    echo "*** Received SIGINT. Will go dying now. ***"
+    exit 255
+}
+trap c_c SIGINT
+
+xset dpms force off
+
+upgrade --ask=n $@
+
+shutdown -hP now
