@@ -1,0 +1,8 @@
+#!/bin/sh
+
+source /etc/init.d/functions.sh
+
+cmd="emerge -uND --with-bdeps=y --keep-going $@ world"
+ebegin $cmd
+    eval $cmd
+eend $?
