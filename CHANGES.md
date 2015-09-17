@@ -1,5 +1,10 @@
 # Changes since latest release
 
+-   Quote arguments
+
+    Quoting arguments is important in case the arguments contain quoted
+    items with spaces.
+
 # Changes in 0.3.0
 
 -   Add changed-deps option
