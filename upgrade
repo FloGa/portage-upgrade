@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source /etc/init.d/functions.sh
+source /lib/gentoo/functions.sh
 
 cmd="emerge -uND --with-bdeps=y --keep-going $@ world"
 ebegin $cmd
