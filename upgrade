@@ -1,8 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 
-source /etc/init.d/functions.sh
+source /lib/gentoo/functions.sh
 
-cmd="emerge -uND --with-bdeps=y --keep-going $@ world"
+cmd=
+for i in emerge -uND --with-bdeps=y --keep-going "$@" world; do
+    cmd="$cmd '$i'"
+done
+
 ebegin $cmd
     eval $cmd
 eend $?
