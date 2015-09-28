@@ -2,8 +2,17 @@
 
 source /lib/gentoo/functions.sh
 
+options='
+--changed-deps
+--deep
+--keep-going
+--newuse
+--update
+--with-bdeps=y
+'
+
 cmd=
-for i in emerge -uND --with-bdeps=y --keep-going "$@" world; do
+for i in emerge $options "$@" world; do
     cmd="$cmd '$i'"
 done
 
