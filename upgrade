@@ -3,7 +3,7 @@
 source /lib/gentoo/functions.sh
 
 cmd=
-for i in emerge -uND --with-bdeps=y --keep-going "$@" world; do
+for i in emerge -uND --changed-deps --with-bdeps=y --keep-going "$@" world; do
     cmd="$cmd '$i'"
 done
 
