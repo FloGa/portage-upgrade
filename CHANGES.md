@@ -5,6 +5,22 @@
     Quoting arguments is important in case the arguments contain quoted
     items with spaces.
 
+-   Add wrapper script to upgrade with binary packages
+
+    An upgrade with binaries only has special needs. There can be a whole
+    lot of packages, wanting to be merged at the same time. Per se, that is
+    not that bad, since the only thing to be done is to extract the package
+    and move it over to the live system. What *can* be a problem though, is
+    the fact, that they all want to *install* at the same time, thus
+    blocking the process and keep the filesystem extremely busy.
+
+    To avoid those blockings without cutting the ability to extract multiple
+    packages in parallel, this wrapper script lifts the limitations of
+    parallel jobs and load average, since extracting doesn't do much harm to
+    the CPU. At the same time, the wrapper adds "ebuild-locks" to and
+    removes "parallel-install" from FEATURES. This causes the install phases
+    to run sequentially instead of parallelly.
+
 # Changes in 0.3.0
 
 -   Add changed-deps option
