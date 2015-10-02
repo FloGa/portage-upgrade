@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export FEATURES="-parallel-install ebuild-locks"
+
+upgrade --jobs --load-average "$@"
