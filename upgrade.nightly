@@ -9,6 +9,6 @@ trap c_c SIGINT
 
 xset dpms force off
 
-upgrade --ask=n $@
+upgrade --ask=n "$@"
 
 shutdown -hP now
