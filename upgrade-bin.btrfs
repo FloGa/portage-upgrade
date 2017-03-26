@@ -1,0 +1,9 @@
+#!/bin/sh
+
+export FEATURES="-merge-sync -parallel-install ebuild-locks keepwork"
+export PORTAGE_TMPDIR="/var/tmp/portage_binupgrade.$(uuidgen)"
+
+btrfs subvolume create "$PORTAGE_TMPDIR"
+trap 'sync; btrfs subvolume delete $PORTAGE_TMPDIR' EXIT
+
+upgrade --jobs --load-average "$@"
