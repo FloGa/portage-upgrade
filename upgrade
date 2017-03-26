@@ -1,21 +1,24 @@
 #!/bin/bash
 
-source /lib/gentoo/functions.sh
+if [ -t 0 ] && [ -t 1 ]; then
+    V=1
+fi
 
-options='
+[ "$V" ] && source /lib/gentoo/functions.sh
+
+options=(
 --changed-deps
 --deep
 --keep-going
 --newuse
 --update
 --with-bdeps=y
-'
+)
 
-cmd=
-for i in emerge $options "$@" world; do
-    cmd="$cmd '$i'"
-done
+cmd=(emerge "${options[@]}" "$@" @world)
 
-ebegin $cmd
-    eval $cmd
-eend $?
+[ "$V" ] && ebegin "${cmd[*]}"
+
+"${cmd[@]}"
+
+[ "$V" ] && eend $?

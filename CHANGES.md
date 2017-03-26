@@ -1,3 +1,16 @@
+# Changes in 0.5.0
+
+-   Use arrays instead of strings
+
+-   Only be verbose if connected to a terminal
+
+-   Add update script with btrfs features
+
+    By using a dedicated subvolume, the deletion afterwards can be done
+    asynchronously, speeding up the emerge process a tiny bit.
+
+-   Add emerge-bin analogons to upgrade-bin
+
 # Changes in 0.4.0
 
 -   Quote arguments
