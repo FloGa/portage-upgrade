@@ -2,22 +2,19 @@
 
 source /lib/gentoo/functions.sh
 
-options='
+options=(
 --changed-deps
 --deep
 --keep-going
 --newuse
 --update
 --with-bdeps=y
-'
+)
 
-cmd=
-for i in emerge $options "$@" world; do
-    cmd="$cmd '$i'"
-done
+cmd=(emerge "${options[@]}" "$@" @world)
 
-ebegin $cmd
+ebegin "${cmd[*]}"
 
-eval $cmd
+"${cmd[@]}"
 
 eend $?
