@@ -17,5 +17,7 @@ for i in emerge $options "$@" world; do
 done
 
 ebegin $cmd
-    eval $cmd
+
+eval $cmd
+
 eend $?
