@@ -1,6 +1,10 @@
 #!/bin/bash
 
-source /lib/gentoo/functions.sh
+if [ -t 0 ] && [ -t 1 ]; then
+    V=1
+fi
+
+[ "$V" ] && source /lib/gentoo/functions.sh
 
 options=(
 --changed-deps
@@ -13,8 +17,8 @@ options=(
 
 cmd=(emerge "${options[@]}" "$@" @world)
 
-ebegin "${cmd[*]}"
+[ "$V" ] && ebegin "${cmd[*]}"
 
 "${cmd[@]}"
 
-eend $?
+[ "$V" ] && eend $?
