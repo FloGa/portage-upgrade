@@ -1,5 +1,10 @@
 # Changes since latest release
 
+-   Add deprecation warning to upgrade.nightly
+
+    This highly dangerous script is merely a remnant of the old times and
+    should be deleted as soon as possible.
+
 # Changes in 0.5.0
 
 -   Use arrays instead of strings
