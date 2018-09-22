@@ -11,7 +11,7 @@
     By using a dedicated subvolume, the deletion afterwards can be done
     asynchronously, speeding up the emerge process a tiny bit.
 
--   Add emerge-bin analogons to upgrade-bin
+-   Add emerge-bin analogous to upgrade-bin
 
 # Changes in 0.4.0
 
