@@ -1,5 +1,12 @@
 #!/bin/sh
 
+{
+    echo "*** DEPRECATION WARNING ***"
+    echo "This command will be removed in an upcoming release."
+    echo "You shouldn't do unattended upgrades anyway."
+    echo "Please stop using it NOW!"
+} >&2
+
 c_c() {
     echo
     echo "*** Received SIGINT. Will go dying now. ***"
