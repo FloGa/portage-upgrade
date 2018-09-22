@@ -1,5 +1,7 @@
 # Changes since latest release
 
+-   Add support for proper bash completion
+
 # Changes in 0.5.0
 
 -   Use arrays instead of strings
