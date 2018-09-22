@@ -1,3 +1,12 @@
+# Changes in 0.6.0
+
+-   Add support for proper bash completion
+
+-   Add deprecation warning to upgrade.nightly
+
+    This highly dangerous script is merely a remnant of the old times and
+    should be deleted as soon as possible.
+
 # Changes in 0.5.0
 
 -   Use arrays instead of strings
@@ -9,7 +18,7 @@
     By using a dedicated subvolume, the deletion afterwards can be done
     asynchronously, speeding up the emerge process a tiny bit.
 
--   Add emerge-bin analogons to upgrade-bin
+-   Add emerge-bin analogous to upgrade-bin
 
 # Changes in 0.4.0
 
